@@ -72,7 +72,18 @@ import { ColorCardComponent } from './color-card.component';
           }"
           style="border-radius: 8px;"
         >
-          {{ lang === 'en' ? 'English' : lang === 'he' ? 'עברית' : lang === 'it' ? 'Italiano' : lang === 'es' ? 'Español' : 'Português' }}
+          {{ 
+            lang === 'en' ? 'English' : 
+            lang === 'he' ? 'עברית' : 
+            lang === 'it' ? 'Italiano' : 
+            lang === 'es' ? 'Español' : 
+            lang === 'pt' ? 'Português' : 
+            lang === 'yue' ? '粵語' :
+            lang === 'ja' ? '日本語' : 
+            lang === 'ko' ? '한국어' :
+            lang === 'th' ? 'ไทย' :
+            'English' 
+          }}
         </button>
       </div>
     </div>
@@ -173,6 +184,11 @@ import { ColorCardComponent } from './color-card.component';
             </div>
           </a>
         </div>
+        <div style="display: flex; justify-content: center;">
+          <a href="https://www.verifiedtools.info" target="_blank" rel="noopener noreferrer">
+            <img src="https://www.verifiedtools.info/badge.png" alt="Verified on Verified Tools" width="200" height="54" />
+          </a>
+        </div>
         <div class="text-gray-400 flex justify-center items-center text-center flex-wrap w-full" [dir]="ls.dir()" style="white-space: normal; word-break: break-word;">
           <span style="white-space: pre;">{{ ls.t('madeBy') }} </span>
           <a href="https://maxim-bortnikov.netlify.app/" target="_blank" style="color:#00a2fa;" class="hover:underline">
@@ -185,7 +201,7 @@ import { ColorCardComponent } from './color-card.component';
 })
 export class AppComponent implements OnInit {
   ls = inject(LanguageService);
-  languages: LangCode[] = ['en', 'he', 'it', 'es', 'pt'];
+  languages: LangCode[] = ['en', 'he', 'it', 'es', 'pt', 'yue', 'ja', 'ko', 'th'];
 
   showLangModal = false;
 
